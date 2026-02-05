@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const AssignmentTracker = () => {
+const API_URL = "https://assignment-backend-ram9.onrender.com/api/assignments";
+
+function AssignmentTracker() {
   const [assignments, setAssignments] = useState([]);
   const [studentName, setStudentName] = useState("");
   const [projectName, setProjectName] = useState("");
 
   const fetchAssignments = async () => {
-    const res = await axios.get("http://localhost:8080/api/assignments");
-    setAssignments(res.data);
+    try {
+      const res = await axios.get(API_URL);
+      setAssignments(res.data);
+    } catch (error) {
+      console.error("Error fetching data", error);
+    }
   };
 
   useEffect(() => {
@@ -17,30 +23,51 @@ const AssignmentTracker = () => {
   }, []);
 
   const addAssignment = async () => {
-    if(!studentName || !projectName) return alert("Enter all fields");
-    await axios.post("http://localhost:8080/api/assignments", { studentName, projectName });
-    setStudentName("");
-    setProjectName("");
-    fetchAssignments();
+    if (!studentName || !projectName) {
+      alert("Enter all fields");
+      return;
+    }
+
+    try {
+      await axios.post(API_URL, {
+        studentName,
+        projectName
+      });
+      setStudentName("");
+      setProjectName("");
+      fetchAssignments();
+    } catch (error) {
+      console.error("Error adding assignment", error);
+    }
   };
 
   const updateStatus = async (id) => {
     const assignment = assignments.find(a => a.id === id);
-    await axios.put(`http://localhost:8080/api/assignments/${id}`, {
-      ...assignment,
-      status: "Completed"
-    });
-    fetchAssignments();
+
+    try {
+      await axios.put(`${API_URL}/${id}`, {
+        ...assignment,
+        status: "Completed"
+      });
+      fetchAssignments();
+    } catch (error) {
+      console.error("Error updating assignment", error);
+    }
   };
 
   const deleteAssignment = async (id) => {
-    await axios.delete(`http://localhost:8080/api/assignments/${id}`);
-    fetchAssignments();
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      fetchAssignments();
+    } catch (error) {
+      console.error("Error deleting assignment", error);
+    }
   };
 
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Student Assignment Tracker</h2>
+
       <div className="mb-3">
         <input
           type="text"
@@ -49,6 +76,7 @@ const AssignmentTracker = () => {
           value={studentName}
           onChange={(e) => setStudentName(e.target.value)}
         />
+
         <input
           type="text"
           className="form-control mb-2"
@@ -56,6 +84,7 @@ const AssignmentTracker = () => {
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
         />
+
         <button className="btn btn-primary w-100" onClick={addAssignment}>
           Add Assignment
         </button>
@@ -89,7 +118,10 @@ const AssignmentTracker = () => {
                 </button>
               </td>
               <td>
-                <button className="btn btn-danger btn-sm" onClick={() => deleteAssignment(a.id)}>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => deleteAssignment(a.id)}
+                >
                   Delete
                 </button>
               </td>
@@ -99,6 +131,6 @@ const AssignmentTracker = () => {
       </table>
     </div>
   );
-};
+}
 
 export default AssignmentTracker;
