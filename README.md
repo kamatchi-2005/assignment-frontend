@@ -24,8 +24,8 @@ If backend is not running, data will not load
 
 📊 Project Presentation
 
-👉 Download Project PPT:
-(Add PPT link here)
+👉 Download Project PPT: https://github.com/kamatchi-2005/assignment-frontend/blob/main/Student-Assignment-Tracker-System.pptx
+
 
 🛠️ Tech Stack
 
