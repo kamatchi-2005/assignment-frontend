@@ -1,71 +1,66 @@
-# Getting Started with Create React App
+📌 Assignment Tracker – Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the React frontend for the Student Assignment Tracker System.
+It allows students to add, view, update, and delete assignments and track their status.
 
-## Available Scripts
+🚀 Live Frontend URL (Vercel)
 
-In the project directory, you can run:
+👉 https://assignment-frontend-six-ashy.vercel.app/
 
-### `npm start`
+⚠️ Important Usage Note
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This frontend depends on the backend service.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+👉 Before using the frontend:
 
-### `npm test`
+Open the backend URL once:
+https://assignment-backend-ram9.onrender.com/api/assignments
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wait for 30–60 seconds (Render Free Plan wakes up)
 
-### `npm run build`
+Then open the frontend URL
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If backend is not running, data will not load
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📊 Project Presentation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👉 Download Project PPT:
+(Add PPT link here)
 
-### `npm run eject`
+🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Axios
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+HTML
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+CSS
 
-## Learn More
+JavaScript
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Vercel (Deployment)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+SonarCloud
 
-### Code Splitting
+▶️ Run Locally
+git clone https://github.com/kamatchi-2005/assignment-frontend.git
+cd assignment-frontend
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Frontend runs at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+http://localhost:3000
 
-### Making a Progressive Web App
+🔍 SonarCloud
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+SonarCloud analysis configured
 
-### Advanced Configuration
+✔ Quality Gate passed successfully
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🔗 Backend
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# assignment-frontend" 
+👉 Live Backend URL:
+https://assignment-backend-ram9.onrender.com/api/assignments
